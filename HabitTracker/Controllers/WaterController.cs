@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace HabitTracker.Controllers;
 
@@ -41,7 +42,7 @@ public class WaterController
             {
                 case 0:
                     Console.WriteLine("Bye!");
-                    closeApp = true;
+                    Environment.Exit(0);
                     break;
                 case 1:
                     GetAllRecords();

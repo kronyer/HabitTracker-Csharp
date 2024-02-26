@@ -32,10 +32,20 @@ namespace HabitTracker.Views
             DateTime dateInput;
             Console.WriteLine("Insert the date: (dd--mm---yy) or type 0 to return");
 
-            while (!DateTime.TryParse(Console.ReadLine(), out dateInput))
+            while (true)
             {
+                string userInput = Console.ReadLine();
+
+                if (userInput == "0") {
+                    Console.Clear();
+                    WaterController.GetUserInput();
+                }
+                if (DateTime.TryParse(userInput, out dateInput))
+                {
+                    break;
+                }
                 Console.WriteLine("Insert a valid DateTime:");
-                DateTime.TryParse(Console.ReadLine(), out dateInput);
+                
             }
             return dateInput;
         }
